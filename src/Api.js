@@ -23,7 +23,7 @@ export default class UserSearch {
 })
         const res = await axios.get(`${BASE_URL}?${params}`);
         if (this.page === 1 && res.data.totalHits !== 0) {
-            Notify.success('Hooray! We found totalHits images.');
+            Notify.success(`'Hooray! We found ${res.data.totalHits} images.'`);
         }
         this.incrementPage();
         return res.data.hits;
